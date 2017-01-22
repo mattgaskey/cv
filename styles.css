@@ -46,14 +46,9 @@ li.active {
 	top: 2px;
 }
 
-
-#matt {
-	position: relative;
-}
-
-.gaskey {
-	font-size: 28px;
-}
+/*
+parallax design by: http://callmenick.com/_development/simple-parallax-effect/
+*/
 
 section {
 	display: block;
@@ -76,6 +71,10 @@ section.module p {
   font-weight: 300;
 }
 
+p.margin-reduce {
+	margin-bottom: 10px !important;
+}
+
 .keywords {
 	font-size: 18px;
 	margin-left: 100px;
@@ -90,7 +89,7 @@ section.module p {
 	font-family: "FontAwesome";
 	content: "\f164";
 	margin: 0 10px 0 -15px;
-	color: #2AB1C1;
+	color: #333;
 }
 
 section.module p:last-child {
@@ -110,46 +109,166 @@ section.module.parallax {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  z-index: 1;
 }
 
 section.module.parallax h1 {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 1);
+  font-family: "Work Sans", sans-serif;
   font-size: 48px;
 	letter-spacing: 6px;
-  line-height: 800px;
+  line-height: 700px;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  z-index: 2;
 }
 
-#headshot {
-	position: absolute;
-	bottom: -22px;
-	right: 1%;
-	width: 200px;
-	height: 217px;
+.opacity {
+	background: #000;
+	overflow: hidden;
 }
 
 section.module.parallax-1 {
-  background-image: url(images/bg01.jpg);
+  background-image: url(images/matt10.jpg);
+  opacity: 0.9;
 }
 
 section.module.parallax-2 {
-  background-image: url(images/bg02.jpg);
+  background-image: url(images/matt14.jpg);
+  opacity: 0.8;
 }
 
 section.module.parallax-3 {
-  background-image: url(images/bg03.jpg);
+  background-image: url(images/matt04.jpg);
+  opacity: 0.8;
 }
 
 section.module.parallax-4 {
-  background-image: url(images/bg04.jpg);
+  background-image: url(images/matt15.jpg);
+  opacity: 0.8;
 }
 
 section.footer h4 {
 	font-size: 14px;
 }
+
+/* end parallax */
+
+/* 
+Interactive timeline by: http://codepen.io/tutsplus/pen/QNeJgR
+*/
+
+.timeline ul {
+  padding: 50px 0;
+}
+
+.timeline ul li {
+  list-style-type: none;
+  position: relative;
+  width: 6px;
+  margin-left: 20px;
+  padding-top: 50px;
+  background: #535166;
+}
+
+.timeline ul li::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #535166;
+}
+
+.timeline ul li div {
+  position: relative;
+  color: #ccc;
+  font-size: 18px;
+  bottom: 0;
+  width: calc(100vw - 91px);
+  padding: 15px;
+  background: #1d1123; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #1d1123 0%, #535166 99%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #1d1123 0%,#535166 99%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, #1d1123 0%,#535166 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d1123', endColorstr='#c065ed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.timeline ul li div::before {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline ul li:nth-child(odd) div {
+  left: 45px;
+}
+
+.timeline ul li:nth-child(odd) div::before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent #1d1123 transparent transparent;
+}
+
+.timeline ul li:nth-child(even) div {
+  left: 45px;
+}
+
+.timeline ul li:nth-child(even) div::before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent #1d1123 transparent transparent;
+}
+
+time {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.timeline ul li::after {
+  transition: background 1.2s ease-in-out;
+}
+
+.timeline ul li.in-view:nth-child(odd)::after {
+  background: #1d1123;
+}
+
+.timeline ul li.in-view:nth-child(even)::after {
+  background: #535166;
+}
+
+.timeline ul li div {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .8s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) div {
+  transform: translate3d(200px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) div {
+  transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* end timeline */
 
 .image-stack {
 	padding: 40px;
@@ -165,9 +284,93 @@ section.footer h4 {
     margin-right:-4px;
 }
 
-/*#social-section {
-	max-height: 525px;
-}*/
+/* 
+Hover effect by https://miketricking.github.io/dist/
+*/
+
+.hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+.hovereffect .overlay {
+  position: absolute;
+  overflow: hidden;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #FFF;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0,1);
+  -ms-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+.hovereffect:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.hovereffect:hover img {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
+}
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  background-color: transparent;
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,-100%,0);
+  transform: translate3d(0,-100%,0);
+}
+
+.hovereffect a {
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.hovereffect:hover a, .hovereffect:hover h2 {
+	text-decoration: none;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+/* end hover effect */
 
 .btn {
 	margin: 34px;
@@ -261,109 +464,6 @@ section.footer h4 {
 	padding-top: 20px;
 }
 
-.timeline ul {
-  padding: 50px 0;
-}
-
-.timeline ul li {
-  list-style-type: none;
-  position: relative;
-  width: 6px;
-  margin-left: 20px;
-  padding-top: 50px;
-  background: #365356;
-}
-
-.timeline ul li::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: #417C81;
-}
-
-.timeline ul li div {
-  position: relative;
-  color: #ccc;
-  font-size: 18px;
-  bottom: 0;
-  width: calc(100vw - 91px);
-  padding: 15px;
-  background: #34494c; /* Old browsers */
-	background: -moz-linear-gradient(-45deg, #34494c 0%, #428086 99%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(-45deg, #34494c 0%,#428086 99%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(135deg, #34494c 0%,#428086 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34494c', endColorstr='#428086',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
-
-.timeline ul li div::before {
-  content: '';
-  position: absolute;
-  bottom: 7px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-}
-
-.timeline ul li:nth-child(odd) div {
-  left: 45px;
-}
-
-.timeline ul li:nth-child(odd) div::before {
-  left: -15px;
-  border-width: 8px 16px 8px 0;
-  border-color: transparent #365356 transparent transparent;
-}
-
-.timeline ul li:nth-child(even) div {
-  left: 45px;
-}
-
-.timeline ul li:nth-child(even) div::before {
-  left: -15px;
-  border-width: 8px 16px 8px 0;
-  border-color: transparent #365356 transparent transparent;
-}
-
-time {
-  display: block;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.timeline ul li::after {
-  transition: background 1.8s ease-in-out;
-}
-
-.timeline ul li.in-view::after {
-  background: #444;
-}
-
-.timeline ul li div {
-  visibility: hidden;
-  opacity: 0;
-  transition: all .8s ease-in-out;
-}
-
-.timeline ul li:nth-child(odd) div {
-  transform: translate3d(200px, 0, 0);
-}
-
-.timeline ul li:nth-child(even) div {
-  transform: translate3d(-200px, 0, 0);
-}
-
-.timeline ul li.in-view div {
-  transform: none;
-  visibility: visible;
-  opacity: 1;
-}
-
 .contact {
 	list-style-type: none;
 	font-size: 18px;
@@ -419,14 +519,6 @@ time {
 	section.footer h4 {
 		font-size: 18px;
 	}
-	#headshot {
-		bottom: -33px;
-		width: 300px;
-		height: 321px;
-	}
-	.gaskey {
-		font-size: 48px;
-	}
 	.contact {
 		font-size: 20px;
 	}
@@ -443,12 +535,6 @@ time {
 		font-size: 24px;
 		margin-right: 30px;
 	}
-	#headshot {
-		right: 20%;
-	}
-	.gaskey {
-		font-size: 96px;
-	}	
 	.timeline ul li {
 		margin: 0 auto;
 	}
@@ -462,7 +548,7 @@ time {
 		left: auto;
 		right: -15px;
   	border-width: 8px 0 8px 16px;
-  	border-color: transparent transparent transparent #407A7F;
+  	border-color: transparent transparent transparent #535166;
 	}
 	.contact {
 		font-size: 24px;
