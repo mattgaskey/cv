@@ -132,22 +132,22 @@ section.module.parallax h1 {
 }
 
 section.module.parallax-1 {
-  background-image: url(images/matt10.jpg);
+  background-image: url(images/matt10_s.jpg);
   opacity: 0.9;
 }
 
 section.module.parallax-2 {
-  background-image: url(images/matt14.jpg);
+  background-image: url(images/matt14_s.jpg);
   opacity: 0.8;
 }
 
 section.module.parallax-3 {
-  background-image: url(images/matt04.jpg);
+  background-image: url(images/matt04_s.jpg);
   opacity: 0.8;
 }
 
 section.module.parallax-4 {
-  background-image: url(images/matt15.jpg);
+  background-image: url(images/matt15_s.jpg);
   opacity: 0.8;
 }
 
@@ -512,6 +512,18 @@ Hover effect by https://miketricking.github.io/dist/
   }
 	.keywords {
 		font-size: 20px;
+	}
+  section.module.parallax-1 {
+  	background-image: url(images/matt10.jpg);
+	}
+  section.module.parallax-2 {
+  	background-image: url(images/matt14.jpg);
+	}
+  section.module.parallax-3 {
+  	background-image: url(images/matt04.jpg);
+	}
+  section.module.parallax-4 {
+  	background-image: url(images/matt15.jpg);
 	}
   section.module.parallax h1 {
     font-size: 96px;
