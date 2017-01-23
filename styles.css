@@ -134,6 +134,7 @@ section.module.parallax h1 {
 section.module.parallax-1 {
   background-image: url(images/matt10.jpg);
   opacity: 0.9;
+  background-position: 30% 50%;
 }
 
 section.module.parallax-2 {
@@ -149,6 +150,7 @@ section.module.parallax-3 {
 section.module.parallax-4 {
   background-image: url(images/matt15.jpg);
   opacity: 0.8;
+  background-position: 30% 50%;
 }
 
 section.footer h4 {
@@ -512,6 +514,12 @@ Hover effect by https://miketricking.github.io/dist/
   }
 	.keywords {
 		font-size: 20px;
+	}
+  section.module.parallax-1 {
+  	background-position: 50% 50%;
+	}
+  section.module.parallax-4 {
+	background-position: 50% 50%;
 	}
   section.module.parallax h1 {
     font-size: 96px;
