@@ -101,7 +101,7 @@ section.module.content {
 }
 
 section.module.parallax {
-  height: 800px;
+  height: 400px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -512,6 +512,9 @@ Hover effect by https://miketricking.github.io/dist/
   }
 	.keywords {
 		font-size: 20px;
+	}
+  section.module.parallax {
+  	height: 800px;
 	}
   section.module.parallax-1 {
   	background-image: url(images/matt10.jpg);
